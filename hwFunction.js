@@ -50,3 +50,87 @@ z = function countDown(x) {
         console.log(i);
     }}
 //countDown(5);
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////works with "-" or with "_" in the one string////////////////////////////////////////////////////
+// 3) Complete the method/function so that it converts dash/underscore delimited words into camel casing.
+// The first word within the output should be capitalized only if the original word was capitalized.
+//     Example:
+// toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+// toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+/////////////////////////////////////////////////////////////////////////////////////////
+
+var str = "the-stealth-warrior";
+console.log (str);
+
+for (i=0; i<str.length; i++) {
+    var check = str[i];
+    if (check == "-") {
+        var re = str.split("-");
+        markus();
+        if (check == "-") break;
+    }
+    if (check == "_") {
+        var re = str.split("_");
+        markus();
+        if (check == "_") break;
+    }
+}
+
+function markus(){   // The Main Function
+// console.log(re);  // For checking that all right
+    var arraySize = re.length;
+//console.log(re.length); // For checking that all right
+
+    var arrayEmpty = [];
+    var arraySum = [];
+
+    for (i=0; i<arraySize; i++){
+        var arrayEmpty = re[i].split("");
+        arrayEmpty[0]=arrayEmpty[0].toUpperCase();
+        var arraySum = arraySum.concat(arrayEmpty);
+    }
+    arraySum[0]=arraySum[0].toLowerCase();
+//console.log(arraySum) // For checking that all right
+    var result = arraySum.join("");
+    console.log(result)}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////works with "-" and "_" in the one string/////////////////////////////////
+// 3) Complete the method/function so that it converts dash/underscore delimited words into camel casing.
+// The first word within the output should be capitalized only if the original word was capitalized.
+//     Example:
+// toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+// toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+var str = "the-stealth-warrior";
+console.log (str);
+
+var re2 = str.split("");
+function markusUpd() {
+//console.log (re2);
+    for (i=0; i<re2.length; i++) {
+
+        var check = re2[i];
+        if (check == "-"){
+            re2[i+1]=re2[i+1].toUpperCase();
+            re2.splice(i, 1);
+        }
+        if (check == "_"){
+            re2[i+1]=re2[i+1].toUpperCase();
+            re2.splice(i, 1);
+        }
+    } var result2 = re2.join("");
+    console.log(result2);
+}
+markusUpd();
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
