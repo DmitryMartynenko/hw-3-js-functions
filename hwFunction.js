@@ -131,6 +131,38 @@ function markusUpd() {
 }
 markusUpd();
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// 4) Write a function that takes a sentence (string) and reverses each word in the sentence.
+// Example:
+// " A fun little challenge! " => " A nuf elttil !egnellahc "
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var strFun = " A fun little challenge! ";
+
+function funLittle() {
+    String.prototype.reverse = function () {
+        return this.split('').reverse().join('');
+    };
+    console.log(strFun)
+    var strFunSplited = strFun.split(" ");
+    var funReversed = [];
+
+    var count = strFunSplited.length;
+
+    for (i=0;i<count;i++){
+        x = strFunSplited[i].reverse();
+        funReversed = funReversed.concat(x);
+    }
+    var final = funReversed.join(" ");
+    console.log(final);
+}
+
+funLittle()
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
