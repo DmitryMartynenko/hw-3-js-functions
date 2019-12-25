@@ -40,17 +40,6 @@ for(key in q) {
 //console.log(arrResult)
 
 
-/////////////////////////////////////////////////////////////////////////////////////////
-// 9) Write function countDown. Function expects number and logs values one by one till zero with one second delay.
-//     Example:
-// countDown(3); // 3 2 1 0
-
-z = function countDown(x) {
-    for(i=x;i>=0;i--) {
-        console.log(i);
-    }}
-//countDown(5);
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -208,5 +197,66 @@ var x = "Ok, i`m w8ing you here";
 stringExpansions(x);
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
+// 6) Write largest and smallest functions that returns the largest and smallest number passed like a argument.
+// Example:
+// largest(2, 0.1, -5, 100, 3) // 100
+// smallest(2, 0.1, -5, 100, 3) // -5
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function largest(...args){
+    for (var i = 0; i < args.length; i++) {
+        if (args[i] > args[i+1]) {
+            args[i+1]=args[i];
+        } else {
+            var largest = (args[i]);
+        }
+    }
+    return largest;
+}
+console.log (largest(5,4,3,1,2,0.5,12,7,5,10,-20,0.5,17))
+
+
+function smallest(...args){
+    for (var i = 0; i < args.length; i++) {
+        if (args[i] < args[i+1]) {
+            args[i+1]=args[i];
+        } else {
+            var smallest = (args[i]);
+        }
+    }
+    return smallest;
+}
+console.log (smallest(5,4,3,1,2,0.5,12,7,5,10,-20,0.5,17))
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
+// 8) Write function sum. Function expects arbitrary number of digit arguments and returns compound value of them.
+// Note: function should use recursion
+// Example:
+// sum(1,3,5,7); //should return 16
+// ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function sum(...args) {
+    var result = 0;
+    for (var i = 0; i < args.length; i++){
+        var result = result + args [i];
+    }
+    return result;
+}
+
+console.log (sum(1,2,3,5,4,7,8,1,2));
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// // 9) Write function countDown. Function expects number and logs values one by one till zero with one second delay.
+// //     Example:
+// // countDown(3); // 3 2 1 0
+
+function countDown(x) {
+    for ( var i = x; i >= 0; i--) {
+        (function(i) {
+            setTimeout(function() {
+                console.log(x-i);
+            }, 50 * (i));
+        })(i);
+    }}
+countDown(16);
+
+// //countDown(5);
